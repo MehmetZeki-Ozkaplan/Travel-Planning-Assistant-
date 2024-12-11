@@ -1,4 +1,4 @@
-#ifndef LIBRARY_H 									// A precaution to prevent this file from being included more than once
+#ifndef LIBRARY_H 							// A precaution to prevent this file from being included more than once
 #define LIBRARY_H 
 
 #include <iostream> 								// Included the library required for check-in and check-out
