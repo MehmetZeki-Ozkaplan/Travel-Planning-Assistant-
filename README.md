@@ -34,6 +34,8 @@ Travel Planning Assistant is a C++ application designed to help users plan their
  ┣ 📜 README.md         # Documentation file
 
 
+
+
 🔧 Setup and Run
 
    1 - Clone the project folder:
@@ -48,6 +50,8 @@ g++ main.cpp graph.cpp location.cpp -o travel_assistant
 
     3 - User Interaction:
 When the program runs, users will see a menu. Make your selections to create your travel plan.
+
+
 
 📊 Example Outputs
 1. Main Menu
