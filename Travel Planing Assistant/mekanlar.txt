@@ -1,0 +1,17 @@
+ID	Mekan Adi				Gezi Suresi (dk)	Giris Ucreti (TL)
+0	Baslangic( Abide kavsagi)		0				0
+1	Balikligol				30				10
+2	Gobeklitepe				120				90
+3	Arkeoloji Muzesi			90				150
+4	Mozaik Muzesi				50				50
+5	Karahantepe				45				100
+6	Eyupnebi				30				8
+7	Hz. Ibrahim Makami			8				5
+8	Halfeti tekne turu			55				200
+9	Kapali Carsi				60				0
+10	Sira Gecesi				130				500
+11	Hasimiye Ciger yemegi			35				300
+12	Balon turu				60				1500
+13	Antik Harran Universitesi Kalintilari	50				60
+14	Hz. Yakup Kuyusu			22				10
+15	Germus kilisesi				15				0
