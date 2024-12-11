@@ -1,48 +1,50 @@
-#ifndef LIBRARY_H 									// Bu dosyanýn birden fazla kez dahil edilmesini önlemek için bir önlem
+#ifndef LIBRARY_H 									// A precaution to prevent this file from being included more than once
 #define LIBRARY_H 
 
-#include <iostream> 								// Giriþ ve çýkýþ iþlemleri için gerekli kütüphane dahil edildi
-#include <cstdio>   								// Standart giriþ/çýkýþ fonksiyonlarý için gerekli kütüphane dahil edildi
-#include <cstring>  								// Karakter dizisi iþlemleri için gerekli kütüphane dahil edildi
-#include <climits>  								// Maksimum ve minimum deðerler için sabitler dahil edildi
-#include <string>   								// String veri tipini kullanmak için gerekli kütüphane dahil edildi
-using namespace std; 								// Standart isim alanýný kullanýlýr
+#include <iostream> 								// Included the library required for check-in and check-out
+#include <cstdio>   								// Included library required for standard input/output functions
+#include <cstring>  								// Included library required for string operations
+#include <climits>  								// Constants included for maximum and minimum values
+#include <string>   								// Included the library required to use the String data type
+using namespace std; 								// The standard namespace is used
 
-// Mekan bilgilerini tutmak için bir yapý tanýmlanýr
-struct Mekan {
-    int id;          								// Mekanýn benzersiz ID'sini tutacak deðiþken tanýmlanýr
-    string isim;     								// Mekan adýný tutacak deðiþken tanýmlanýr
-    int geziSuresi;  								// Mekanýn gezilme süresi
-    int girisUcreti; 								// Mekanýn giriþ ücreti
+// A structure is defined to hold space information
+struct Mekan 
+{
+    int id;          								// The variable that will hold the unique ID of the venue is defined
+    string isim;     								// The variable that will hold the name of the place is defined
+    int geziSuresi;  								// Duration of the visit of the place
+    int girisUcreti; 								// Entrance fee of the venue
 };
 
-// Graf yapýsýný ve ilgili iþlemleri tanýmlamak için bir sýnýf oluþturulur
-class Graf {
+// A class is created to define the graph structure and related operations
+class Graf 
+{
 public:
-    int komsulukMatrisi[16][16]; 					// Mesafeleri tutmak için 16x16 boyutunda komþuluk matrisi tanýmlanýr
-    int n;                       					// Graf içerisindeki toplam düðüm sayýsý tanýmlanýr
-    string mekanIsimleri[16];    					// Mekan isimlerini saklayan bir dizi tanýmlanýr
+    int komsulukMatrisi[16][16]; 					// A 16x16 adjacency matrix is defined to keep distances
+    int n;                       					// The total number of nodes in the graph is defined
+    string mekanIsimleri[16];    					// A sequence is defined that stores the names of places
 
-    // Kurucu-Construcot fonksiyon: Graf nesnesini baþlatýr
+    // Constructor-Construcot function: Initializes the graph object
     Graf(int n);
 
-    // Grafý dosya verilerinden okuyarak oluþturur
+    // Creates the graph by reading it from file data
     void grafOlustur();
 
-    // Dijkstra algoritmasýný kullanarak en kýsa yolu hesaplar
-    // Parametreler: - baslangic: Baþlangýç noktasý - gezilecekMekanlar: Kullanýcýnýn seçtiði mekanlarýn ID'leri - secimSayisi: Seçilen mekan sayýsý
+    // Calculates the shortest path using the Dijkstra algorithm
+    // Parameters: - start: Starting point - destinations: IDs of the venues selected by the user - number of selections: Number of selected venues
     void enKisaYolHesapla(int baslangic, int gezilecekMekanlar[], int secimSayisi);
 };
 
-// Mekan bilgilerini dosyadan okuyan bir fonksiyon
-// Parametreler:  - mekanlar: Mekan bilgilerini tutan dizi - mekanSayisi: Toplam mekan sayýsýný tutan deðiþken
+// A function that reads venue information from a file
+// Parameters: - venues: Array holding venue information - venueNumber: Variable holding the total number of venues
 void dosyaOku(Mekan mekanlar[], int &mekanSayisi);
 
-// Mekanlarý sýralayan ve sýralamayý ekrana yazdýran bir fonksiyon
-// Mekanlar giriþ ücreti veya gezi süresi gibi kriterlere göre sýralanýr
+// A function that sorts the spaces and prints the order on the screen
+// Venues are ranked according to criteria such as entrance fee or duration of excursions
 void mekanSirala();
 
-// Kullanýcýya menüyü göstermek ve programda gezinmesini saðlamak için bir fonksiyon tanýmlanýr
+// A function is defined to show the user the menu and allow him to navigate the program
 void menu();
 
-#endif 												// LIBRARY_H // Include Guard'ýn sonu
+#endif 												// LIBRARY_H // End of Include Guard
